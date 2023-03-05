@@ -4,28 +4,197 @@ using namespace std;
 #define rep(i, n) for(int i = 0; i < (n); i++)
 // for(auto &ia : a)
 int main() {
-    int n;
-    string s;
-    cin >> n >> s;
-    set<pair<int, int>> key;
-    key.insert({0,0});
-    int x = 0;
-    int y = 0;
-    for(int i = 0; i < s.size(); i++) {
-        if(s[i] == 'R')x++;
-        else if(s[i] == 'L')x--;
-        else if(s[i] == 'U')y++;
-        else if(s[i] == 'D')y--;
-        if(key.find({x,y}) != key.end()) {
-            cout << "Yes" << endl;
-            return 0;
-        } else {
-            key.insert({x,y});
-        }
+    int n,p,q,r,s;
+    int a[101];
+    cin >> n >> p >> q >> r >> s;
+    for(int i = 1; i<= n; i++) {
+        cin >> a[i];
     }
-    cout << "No" << endl;
+    for(int i = 1; i<= n; i++) {
+        if(p<=i&& i<=q) {
+            cout << a[i+r-p];
+        } else if(r <= i && i <= s) {
+            cout << a[i+p-r];
+        }else {
+            cout << a[i];
+        }
+        if(i < n)cout << " ";
+        else cout << endl;
+    }
     return 0;
 }
+// int main() {
+//     int n,p,q,r,s;
+//     cin >> n >> p >> q >> r >> s;
+//     p--;
+//     q--;
+//     r--;
+//     s--;
+//     vector<int> a(n);
+//     for(int i = 0; i < n; i++) {
+//         cin >>a[i];
+//     }
+//     vector<int> ans(n);
+//     for(int i = 0; i<n; i++) {
+//         if(p <= i && i <= q) {
+//             ans[i+r] = a[i];
+//         } else if(r <= i && i <= s) {
+//             ans[i-q] = a[i]; 
+//         }else{
+//             ans[i] = a[i];
+//         }
+//     }
+//     for(int i = 0; i<n-1; i++) {
+//         cout << ans[i] << " ";
+//     }
+//     cout << ans[-1] << endl;
+//     return 0;
+// }
+// int main() {
+//     int n; cin >> n;
+//     vector<string> a(n);
+//     int fo= 0, against=0;
+//     for(int i = 0; i < n; i++) {
+//         cin >> a[i];
+//     }
+//     for(int i = 0; i < n; i++) {
+//         if(a[i] == "For") {
+//             fo++;
+//         } else {
+//             against++;
+//         }
+//     }
+//     if(fo > against) {
+//         cout << "Yes" << endl;
+//     } else {
+//         cout << "No" << endl;
+//     }
+//     return 0;
+// }
+// int main() {
+//     int n; cin >> n;
+//     ll ans = 0;
+//     for(int i = 1; i <n; i++) {
+//         int X,Y;
+//         X = i;
+//         Y = n-i;
+//         ll x = 0, y = 0;
+//         for(int j = 1; j*j <=X; j++) {
+//             if(X%j == 0) {
+//                 x++;
+//                 if(X != j*j)x++;
+//             }
+//         }
+//         for(int j = 1; j*j <= Y; j++) {
+//             if(Y%j == 0) {
+//                 y++;
+//                 if(Y != j*j)y++;
+//             }
+//         }
+//         ans += x*y;
+//     }
+//     cout << ans << endl;
+//     return 0;
+// }
+// int main() {
+//     int n, q;
+//     cin >> n >> q;
+//     vector<vector<bool>> card(n, vector<bool> (2));
+//     for(int i = 0; i< q; i++){
+//         int c,x;
+//         cin >> c >> x;
+//         if(c == 1) {
+//             x--;
+//             c--;
+//             if(card[x][c])card[x][c+1] = true;
+//             else card[x][c] = true;
+//         } else if(c == 2) {
+//             x--;
+//             c--;
+//             card[x][c] = true;
+//         } else if (c == 3) {
+//             x--;
+//             if(card[x][1]) {
+//                 cout << "Yes" << endl;
+//             } else {
+//                 cout << "No" << endl;
+//             }
+//         }
+//     }
+// }
+// int main() {
+//     string s;
+//     cin >> s;
+//     for(int i = 0; i< s.size(); i++) {
+//         s[i] = s[i]+('A'-'a');
+//     }
+//     cout << s << endl;
+//     return 0;
+// }
+// int main() {
+//     int n, m;
+//     cin >> n >> m;
+//     vector<pair<ll, ll>> drink(n);
+//     for(int i = 0; i < n; i++) {
+//         cin >> drink[i].first >> drink[i].second;
+//     }
+//     sort(drink.begin(), drink.end());
+//     long long ans = 0;
+//     for(int i = 0; i < n; i++) {
+//         if(m-drink[i].second < 0) {
+//             ans += drink[i].first*m;
+            
+//             break; 
+//         } else {
+//             ans += drink[i].first*drink[i].second;
+//             m -= drink[i].second;
+//         }
+//     }
+//     cout << ans << endl;
+//     return 0;
+// }
+// int main() {
+//     int n;
+//     string s;
+//     cin >> n >> s;
+
+//     for(int i = 1; i < n; i++) {
+//         int m = n-i;
+//         int cnt = 0;
+//         for(int l = 1; l <= m; l++) {
+//             if(s[l-1] != s[l+i-1]) {
+//                 cnt++;
+//             } else {
+//                 break;
+//             }
+//         }
+//         cout << cnt << endl;
+//     }
+//     return 0;
+// }
+// int main() {
+//     int n;
+//     string s;
+//     cin >> n >> s;
+//     set<pair<int, int>> key;
+//     key.insert({0,0});
+//     int x = 0;
+//     int y = 0;
+//     for(int i = 0; i < s.size(); i++) {
+//         if(s[i] == 'R')x++;
+//         else if(s[i] == 'L')x--;
+//         else if(s[i] == 'U')y++;
+//         else if(s[i] == 'D')y--;
+//         if(key.find({x,y}) != key.end()) {
+//             cout << "Yes" << endl;
+//             return 0;
+//         } else {
+//             key.insert({x,y});
+//         }
+//     }
+//     cout << "No" << endl;
+//     return 0;
+// }
 // int main() {
 //     int n;
 //     string s;
