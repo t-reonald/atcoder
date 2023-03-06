@@ -3,26 +3,43 @@ using namespace std;
 #define ll long long
 #define rep(i, n) for(int i = 0; i < (n); i++)
 // for(auto &ia : a)
-int main() {
-    int n,p,q,r,s;
-    int a[101];
-    cin >> n >> p >> q >> r >> s;
-    for(int i = 1; i<= n; i++) {
-        cin >> a[i];
-    }
-    for(int i = 1; i<= n; i++) {
-        if(p<=i&& i<=q) {
-            cout << a[i+r-p];
-        } else if(r <= i && i <= s) {
-            cout << a[i+p-r];
-        }else {
-            cout << a[i];
-        }
-        if(i < n)cout << " ";
-        else cout << endl;
-    }
-    return 0;
-}
+
+// int main() {
+//     string s;
+//     cin >> s;
+//     int l = s.size();
+//     ll sum = 0;
+//     for(int i = 1; i < l; i++) {
+//         sum += pow(26, i);
+//     }
+//     for(int i = 0; i < l-1; i++) {
+//         sum += (s[i]-'A')*pow(26, (l-i-1));
+//     }
+//     sum += (s[l-1]-'A'+1);
+//     cout << sum << endl;
+//     return 0;
+// }
+// 
+// int main() {
+//     int n,p,q,r,s;
+//     int a[101];
+//     cin >> n >> p >> q >> r >> s;
+//     for(int i = 1; i<= n; i++) {
+//         cin >> a[i];
+//     }
+//     for(int i = 1; i<= n; i++) {
+//         if(p<=i&& i<=q) {
+//             cout << a[i+r-p];
+//         } else if(r <= i && i <= s) {
+//             cout << a[i+p-r];
+//         }else {
+//             cout << a[i];
+//         }
+//         if(i < n)cout << " ";
+//         else cout << endl;
+//     }
+//     return 0;
+// }
 // int main() {
 //     int n,p,q,r,s;
 //     cin >> n >> p >> q >> r >> s;
